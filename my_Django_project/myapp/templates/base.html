@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>{% block title %}
+		Khubi Ram Baidik
+{% endblock %} </title>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<style> 
+		body{
+			background-color: #14ccc5;
+      font-family: 'lucida casaul' , 'comic sans MS';
+			
+		}
+	.col-lg-7{
+		height: auto;
+		background: white;
+		border-top-right-radius: 8px;
+		border-bottom-right-radius: 8px;
+		padding: 20px;
+		padding-right: 40px;
+		padding-left: 40px;
+		margin-left: 5px ;
+		text-align: justify;
+
+			}
+
+	.col-lg-4 .col-md-4 .col-sm-4{
+		height: auto;
+		background: none;
+		margin-left: 29px;
+		padding: 10px;
+
+			}
+.navbar{
+	min-height: 190px;
+	background: #7c1a04;
+	color: white;
+}
+
+.fa{
+color: red;
+font-size: 30px;
+
+
+}
+.fa:hover{
+color: green;
+font-size: 32px;
+
+}
+	</style>
+
+<nav class="navbar navbar-default" style="font-size: 17px;">
+  <div class="container-fluid">
+  	  <br><center>
+  	  	<h1 style="font-family: sans-serif; font-size: 29px;">KHUBI RAM BAIDIK</h1>
+<h4>Welcome to the personal site of Khubi Ram Baidik</h4>
+</center> 
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                  
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+       {% block list %}
+       
+       {% endblock%}
+      </ul>
+
+
+    <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle nav navbar-nav navbar-right" type="button" data-toggle="dropdown">{% if request.user.is_authenticated %}
+    	<small><b style="font-size: 20px;">{{ request.user|capfirst }}</small></b>
+   </button>
+    <ul class="dropdown-menu dropdown-menu-right">
+    	 <li><a href="/profile">View Profile</a></li>
+      <li><a href="{% url 'user_logout' %} ">Logout</a></li>
+
+    </ul>
+
+    </div>
+    {% else %}
+   
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user btn btn-primary"></span> Sign Up</a></li>
+      <li><a href="{% url 'user_login' %} "><span class="glyphicon glyphicon-log-in btn btn-primary"></span> Login</a></li>
+    </ul>
+     {% endif %}
+  </div>
+</nav>
+
+{% block content %}
+
+{% endblock %}
+	
+<div class="footer container-fluid" style="width: 100%; height: auto;border-top: 2px solid black; background-color: #5454;">
+	<H1 style="text-align: center; ">THIS IS THE FOOTER SECTION</H1><hr>
+	<h3 style="font-weight: bold; color: white; padding-left: 10px; float: center; text-align: center;">Follow me on :
+	<a href="https://www.facebook.com/krbaidik"><i class="fa fa-facebook " style="width: 20px; height: 20px; "></i></a>
+	<a href="https://twitter.com/krbaidik"><i class="fa fa-twitter" style="width: 30px; height: 30px;"></i></a>
+	<a href="https://www.instagram.com/krbaidik/"><i class="fa fa-instagram" style="width: 20px; height: 20px;"></i></a></h3>
+
+</div>
+
+
+</body>
+</html>

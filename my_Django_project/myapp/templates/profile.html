@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>profile</title>
+</head>
+<body>
+<h1>{{request.user}}</h1>
+{% for s in student %}
+
+{{ s.name }}
+{{ s.image }}
+{% endfor %}
+
+</body>
+</html>

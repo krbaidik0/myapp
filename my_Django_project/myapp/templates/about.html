@@ -1,0 +1,55 @@
+
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+
+{% block title %}
+
+{{ block.super }}  | About
+{% endblock %}
+
+{% block list %}
+
+ <li><a href="/">Home</a></li>
+        <li class="active">
+          <a href="/about/me">About Me</a></li>
+        <li><a href="/photos">Photos</a></li>
+        <li><a href="/contact/me">Contact Me</a></li>
+
+{% endblock %}
+
+  
+{% block content %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-7 col-sm-7 col-md-7 col-12">
+        <hr>
+        <img src="{% static 'images/khubi.jpg' %}" class="img-thumbnail" class="img-fluid">
+        <p>
+                <hr>
+                      <h2>Details about me</h2>
+                  <pre style="font-size: 17px;">
+<b>Name</b>              : Khubi Ram Baidik <br>
+<b>TemporaryAddress</b>  : Kathmandu, Nepal <br>
+<b>PermanentAddress</b>  : Pyuthan, Nepal <br>
+<b>College</b>           : Nagarjuna college of Information Technology <br>
+<b>Email</b>             : krbaidik0@gmail.com <br>
+<b>Contact_no.</b>       : +977-9868638416, +977-9810258144 <br>
+<b>Nationality</b>       : Nepali <br>
+<b>Language</b>          : Nepali, English <br>
+<b>Marrital Status</b>   : Single <br>
+</pre>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <h3>About Khubi Ram Baidik</h3><hr>
+
+<h4>I am Khubi Ram Baidik from Pyuthan, Nepal. I love to do work on computer and I am little bit a computer programmer. You Can contact me by sending the message through this link -- <br> <br> <a href="/contact/me"><button class="btn btn-primary">Click Me</button></a>
+</h4>
+      </div>
+    </div>
+  </div>      
+ 
+{% endblock %}

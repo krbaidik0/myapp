@@ -1,0 +1,60 @@
+
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+
+{% block title %}
+{{ block.super }} | photos
+{% endblock %}
+
+{% block list %}
+
+ <li><a href="/">Home</a></li>
+        <li>
+          <a href="/about/me">About Me</a></li>
+        <li class="active"><a href="/photos">Photos</a></li>
+        <li><a href="/contact/me">Contact Me</a></li>
+
+{% endblock %}
+
+  
+{% block content %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 col-sm-8 col-md-8 col-12">
+    
+<h1>Collection of Photos are here..</h1>
+    <hr>
+<div class="row">
+  <div class="col-md-6">
+   <a href="{% static 'images/khubi.jpg' %}"><img src="{% static 'images/khubi.jpg' %}" class="img-thumbnail" class="img-fluid"></a> 
+<a href="{% static 'images/img1.jpg' %}"><img src="{% static 'images/img1.jpg' %}" class="img-thumbnail" class="img-fluid"></a>
+<a href="{% static 'images/img3.jpg' %}"><img src="{% static 'images/img3.jpg' %}" class="img-thumbnail" class="img-fluid"></a>
+<a href="{% static 'images/img6.jpg' %}"><img src="{% static 'images/img6.jpg' %}" class="img-thumbnail" class="img-fluid"></a>
+
+  </div>
+   <div class="col-md-6">
+ <a href="{% static 'images/img8.jpg' %}"><img src="{% static 'images/img8.jpg' %}" class="img-thumbnail" class="img-fluid"></a>
+ <a href="{% static 'images/img4.jpg' %}"><img src="{% static 'images/img4.jpg' %}" class="img-thumbnail" class="img-fluid"></a>
+ <a href="{% static 'images/img5.jpg' %}"><img src="{% static 'images/img5.jpg' %}" class="img-thumbnail" class="img-fluid"></a>
+<a href="{% static 'images/img7.jpg' %}"><img src="{% static 'images/img7.jpg' %}" class="img-thumbnail" class="img-fluid"></a>
+  </div> 
+</div>
+</div>
+        
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <h3>About Khubi Ram Baidik</h3><hr>
+
+<h4>I am Khubi Ram Baidik from Pyuthan, Nepal. I love to do work on computer and I am little bit a computer programmer. You Can contact me by sending the message through this link -- <br> <br> <a href="/contact/me"><button class="btn btn-primary">Click Me</button></a>
+</h4>
+      </div>
+    </div>
+  </div>      
+
+{% endblock %}
+</body>
+
+</html>

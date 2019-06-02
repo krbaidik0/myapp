@@ -1,0 +1,37 @@
+{% extends 'base.html '%}
+
+{% load static %}
+
+
+{% block title %}
+
+{{ block.super }} | {{ detail.title }}
+
+{% endblock %}
+
+{% block list %}
+
+ <li><a href="/">Home</a></li>
+        <li>
+          <a href="/about/me">About Me</a></li>
+        <li><a href="/photos">Photos</a></li>
+        <li><a href="/contact/me">Contact Me</a></li>
+
+{% endblock %}
+
+{% block content %}
+
+
+	<center>
+<h1 style=" font-size: 40px; color: green; background-color: rgba(2,0,30,400);"> Product Name:{{ detail.title }}</h1><hr>
+<img src="/media/{{ detail.image }}" height="400px" width="500px"><br></center><hr>
+
+<div class="info" style="letter-spacing: 0.2px; font-size: 25px; background-color:cyan; padding: 10px; padding-left: 40px; ">
+	<h2>Details</h2>
+ <b>Content: </b>{{detail.content }}<br>
+ <b>Created-Date:</b> <small>{{detail.created }}</small><br>
+<b>Last Updated:</b> {{detail.updated }}<br>
+<h3><button class="btn btn-primary" style="font-size: 30px;"><a href="/contact/me/" style="text-decoration: none; color: white;" >Order Now</h3></a></button>
+</div>
+
+{% endblock %}

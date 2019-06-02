@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+
+{% block title %}
+
+{{ block.super }} | contact
+{% endblock %}
+
+{% block list %}
+
+        <li><a href="/">Home</a></li>
+        <li>
+          <a href="/about/me">About Me</a></li>
+        <li><a href="/photos">Photos</a></li>
+        <li class="active"><a href="/contact/me">Contact Me</a></li>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-7 col-md-7 col-sm-7">
+
+<h1>Have you any queries? </h1>
+<hr><br>
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}  
+<h5 style="padding-left: 40px;">{{ form.as_p }}
+
+  <button class="btn btn-primary">Submit</button></h5><br><br>
+</form>
+</div>
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+        <h3>About Khubi Ram Baidik</h3><hr>
+
+<h4>I am Khubi Ram Baidik from Pyuthan, Nepal. I love to do work on computer and I am little bit a computer programmer. You Can contact me by sending the message through this link -- <br> <br> <a href="/contact/me"><button class="btn btn-primary">Click Me</button></a>
+</h4>
+      </div>
+    </div>
+  </div>  
+
+  </div>
+</div>
+    
+{% endblock %}

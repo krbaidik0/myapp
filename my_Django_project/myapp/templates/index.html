@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+
+{% block title %}
+
+{{ block.super }} | Homepage
+{% endblock %}
+
+{% block list %}
+
+ <li class="active"><a href="/">Home</a></li>
+        <li>
+          <a href="/about/me">About Me</a></li>
+        <li><a href="/photos">Photos</a></li>
+        <li><a href="/contact/me">Contact Me</a></li>
+ 
+{% endblock %}
+
+	
+{% block content %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-7 col-sm-7 col-md-7 col-12">
+				<h2>The Person</h2>
+				<hr>
+				<h4 style="letter-spacing: 1.2px;">Khubi Ram Baidik is a name of person who strongly believe in his work and make the impossible thing to happen through his hard work and dedication. He is Computer Programmer. After completing +2 he joins the bachelors of IT in Nagarjuna college of information Technology, Pulchock Lalitpur.</h4>
+				<img src="{% static 'images/khubi.jpg' %}" class="img-thumbnail" class="img-fluid">
+				<h1><b><center>Product Lists Here..</b></center></h1>
+								<hr>
+
+
+	<br>
+{% for s in student %}
+			
+		<div class="auto" style=" padding: 20px; background-color:pink;">
+		<img src="media/{{ s.image }}" class="img-fluid img-thumbnail">		
+		<h3 style=" text-transform: uppercase; font-weight: bold; letter-spacing: 2px; ">{{ s.title }} </h3>
+		[<a href="/details/{{s.id}}">Show Details</a>]<hr>
+
+     	<h3 style="">{{ s.content }}</h3>
+     	</div><br>
+{% endfor %}
+
+
+
+			</div>
+<div class="col-lg-4 col-md-4 col-sm-4">
+	<h3>About Khubi Ram Baidik</h3><hr>
+
+<h4>I am Khubi Ram Baidik from Pyuthan, Nepal. I love to do work on computer and I am little bit a computer programmer. You Can contact me by sending the message through this link -- <br> <br> <a href="/contact/me"><button class="btn btn-primary">Click Me</button></a>
+</h4>
+			</div>
+		</div>
+	</div>      
+ <!-- <ul class="pager">
+    <li class="next"><a href="/about">Next</a></li>
+  </ul> !-->
+
+{% endblock %}
