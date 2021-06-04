@@ -34,7 +34,7 @@ dask==0.13.0
 datashape==0.5.4
 decorator==4.0.11
 dill==0.2.5
-Django==2.2
+Django==2.2.21
 django-countries==5.3.3
 django-crispy-forms==1.7.2
 django-mysql==3.0.0.post1
